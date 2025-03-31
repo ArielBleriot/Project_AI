@@ -1,0 +1,65 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "add_event",
+            "description": "Adds/creates an event into the database with a specified date, time, and description from a user id",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "event_name":{
+                        "type": "string",
+                        "description": "name of the event"
+                    },
+                    "event_date": {
+                        "type": "string",
+                        "description": "The date of the event in DD-MM-YYYY format"
+                    },
+                    "event_time": {
+                        "type": "string",
+                        "description": "The time of the event in HH:MM format (24-hour time)"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the event will occur"
+                    }
+                },
+                "required": ["event_date", "event_time"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "modify_event",
+            "description": "Updates/modify an event with event name, date, time or location in the database with specified event id",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id_event":{
+                        "type": "integer",
+                        "description": "index of the event"
+                    }
+                },
+                "required": ["id_event"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "remove_event",
+            "description": "Deletes/removes an event from a user id with specified event id",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id_event":{
+                        "type": "integer",
+                        "description": "event identification number"
+                    }
+                },
+                "required": ["id_event"]
+            }
+        }
+    }
+]

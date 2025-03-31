@@ -1,0 +1,14 @@
+.container { display: flex; width: 100%; }
+.chat-container { width: 50%; padding: 20px; border-right: 1px solid #ccc; display: flex; flex-direction: column; }
+.messages { flex-grow: 1; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+.input-container { display: flex; }
+.input-container input { flex-grow: 1; padding: 5px; }
+.input-container button { padding: 5px; }
+.calendar { width: 50%; padding: 20px; }
+.header { display: flex; justify-content: space-between; align-items: center; }
+.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.day { padding: 10px; border: 1px solid #ddd; cursor: pointer; text-align: center; }
+.day.today { background-color: yellow; }
+.events { margin-top: 20px; }
+.eventList { list-style: none; padding: 0; }
+.eventList li { background: #f4f4f4; padding: 5px; margin-top: 5px; cursor: pointer; }
