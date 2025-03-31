@@ -29,3 +29,5 @@ extract_details was used to collect informations from provided inputs, currently
 
 The assistant uses model "gpt-4o-mini"
 In case of thread cannot be appended, replace thread_id in config.json to "firstrun"
+
+future updates will be about accepting dynamic inputs, and work on other tables of the database
