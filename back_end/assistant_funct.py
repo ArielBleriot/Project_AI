@@ -36,7 +36,7 @@ def modify_event(user_id, message):
     event_id, new_event_name, new_event_date, new_event_time, new_location = extract_details(user_id, message)
     print(events)
     print(event_id)
-    old_event_id, old_event_name, old_event_date, old_event_time, old_location = events[event_id]
+    old_event_id, old_event_name, old_event_date, old_event_time, old_location = events[event_id-1]
 
     updated_event_name = new_event_name if new_event_name else old_event_name
     updated_event_date = new_event_date if new_event_date else old_event_date
