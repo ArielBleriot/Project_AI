@@ -275,7 +275,7 @@ def extract_locations(message):
 def extract_details(user_id, message):
     extracted_id = extract_event_index(message)
     if extracted_id:
-        id = get_specific_event(int(extracted_id)-1)
+        id = get_specific_event(user_id, int(extracted_id)-1)
     else:
         id = extracted_id
     name = extract_event_names(message)
