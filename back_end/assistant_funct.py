@@ -32,9 +32,10 @@ def get_events(user_id):
 
 def modify_event(user_id, message):
     event_list, events = get_events(user_id)
-
+    old_event = sorted_events(user_id)
     event_id, new_event_name, new_event_date, new_event_time, new_location = extract_details(user_id, message)
-    event_id = get_specific_event(1, event_id)
+    print(events)
+    print(event_id)
     old_event_id, old_event_name, old_event_date, old_event_time, old_location = events[event_id]
 
     updated_event_name = new_event_name if new_event_name else old_event_name
@@ -124,7 +125,7 @@ def delete_event(user_id, message):
 #         location = location_match.group(2).strip()
 
 #     # Extract event name
-#     clean_message = re.sub(r'(on\s.*|at\s.*|add it.*|schedule.*|change.*|delete.*)', '', message).strip()
+#     clean_message = re.sub(r'(on\s.|at\s.|add it.|schedule.|change.|delete.)', '', message).strip()
 #     event_name = clean_message.capitalize() if clean_message else "Unnamed Event"
 
 #     return event_id, event_name, event_date, event_time, location
@@ -150,11 +151,12 @@ def sorted_events(user_id):
     return event_dict_list  # Return events as a JSON array
 
 def get_specific_event(user_id, chosen_index):
-    
+
     get_event = sorted_events(user_id)
     
     # Retrieve the event from the sorted list
     event = get_event[chosen_index-1]
+    print(event)
     
     event_name = event['event_name']
     event_date = event['event_date']
@@ -203,7 +205,7 @@ def extract_event_names(message):
         elif "mom's house" in message.lower():
             event_name = "mom's house"
     
-    return event_name if event_name else [None]
+    return event_name if event_name else None
 
 def extract_dates(message):
     match = re.search(r'(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})(?:st|nd|rd|th)?', message, re.IGNORECASE)
@@ -275,7 +277,7 @@ def extract_locations(message):
 def extract_details(user_id, message):
     extracted_id = extract_event_index(message)
     if extracted_id:
-        id = get_specific_event(user_id, int(extracted_id)-1)
+        id = get_specific_event(user_id, int(extracted_id))
     else:
         id = extracted_id
     name = extract_event_names(message)
