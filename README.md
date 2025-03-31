@@ -30,4 +30,34 @@ extract_details was used to collect informations from provided inputs, currently
 The assistant uses model "gpt-4o-mini"
 In case of thread cannot be appended, replace thread_id in config.json to "firstrun"
 
-future updates will be about accepting dynamic inputs, and work on other tables of the database
+- future updates will be about accepting dynamic inputs, changes events name and work on other tables of the database
+
+Summary of the libraries and their purposes:
+
+spaCy (3.8.4) – NLP library for processing and analyzing text.
+
+en-core-web-sm (3.8.0) – Small English language model for spaCy.
+
+Flask (2.1.3) – Lightweight web framework for building APIs and web applications.
+
+Flask[async] (3.8.1) – Asynchronous version of Flask for handling async tasks.
+
+Dateparser (1.2.1) – Parses natural language dates (e.g., "tomorrow" or "next Friday").
+
+OpenAI (1.54.3) – API client for integrating OpenAI models (e.g., GPT).
+
+Flask-CORS (5.0.1) – Handles Cross-Origin Resource Sharing (CORS) in Flask apps.
+
+
+1-![Capture d'écran 2025-03-31 161749](https://github.com/user-attachments/assets/c2fdc3f5-2e10-4684-bc90-451c69911913)
+/*signup page you will have to register first before login*/
+2-![WhatsApp Image 2025-03-31 at 13 23 32_56b824b6](https://github.com/user-attachments/assets/7de049f2-ae2e-4951-9eed-a9a51a21ac06)
+/*you can add event , date , and time , location and modify as you can see but the event name won't be changed because the event name function is not very dynamic so it can only recognize specific name from the code */
+3- ![WhatsApp Image 2025-03-31 at 13 28 32_c3fb1e61](https://github.com/user-attachments/assets/2fec6662-f7c3-46c3-b62d-635c9e6b39cf)
+/*you can delete event by starting from the database */ 
+
+4- event function name the system recognize : ![WhatsApp Image 2025-03-31 at 13 25 39_f7cd6bd9](https://github.com/user-attachments/assets/e8653961-88b5-46f7-b918-d8ff3b570824)
+
+
+
+
